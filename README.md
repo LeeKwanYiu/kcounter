@@ -1,18 +1,57 @@
 # kcounter
 
-> A Vue.js project
+> A Vue.js component
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+# install dependencies in the project
+npm install kcounter
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Introduce in the entry file (main.js)
+
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import kcounter from 'kcounter'
+
+Vue.use(kcounter)
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+```
+
+## Example
+
+```vue
+<template>
+  <div id="app">
+    <kcounter :autoplay="false"/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+     
+    }
+  }
+}
+</script>
+```
+#### Params
+
+autoplay: if auto play the counter when default
+
+start: start num
+
+end: end time
+
+duration: Maintenance time
+
+![avatar](src/assets/example.png)
